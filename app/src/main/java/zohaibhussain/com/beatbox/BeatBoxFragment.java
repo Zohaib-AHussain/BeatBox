@@ -20,6 +20,8 @@ public class BeatBoxFragment extends Fragment {
 
     private static final int GRID_COLUMNS = 3;
 
+    private BeatBox mBeatBox;
+
     @Bind(R.id.fragment_beat_box_recycler_view)
     protected RecyclerView mRecyclerView;
 
@@ -31,20 +33,21 @@ public class BeatBoxFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_beat_box, container, false);
-        ButterKnife.bind(v);
+        ButterKnife.bind(this, v);
         mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(), GRID_COLUMNS));
         mRecyclerView.setAdapter(new SoundAdapter());
+        mBeatBox = new BeatBox(getActivity());
         return v;
     }
 
-    private class SoundHolder extends RecyclerView.ViewHolder{
+    protected class SoundHolder extends RecyclerView.ViewHolder{
 
         @Bind(R.id.list_item_sound_button)
         protected Button mButton;
 
         public SoundHolder(LayoutInflater inflater, ViewGroup container) {
             super(inflater.inflate(R.layout.list_item_sound, container, false));
-            ButterKnife.bind(inflater.inflate(R.layout.list_item_sound, container, false));
+            ButterKnife.bind(this, inflater.inflate(R.layout.list_item_sound, container, false));
         }
     }
 
