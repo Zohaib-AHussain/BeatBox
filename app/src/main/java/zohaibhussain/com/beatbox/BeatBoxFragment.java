@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import java.util.List;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
@@ -34,9 +36,9 @@ public class BeatBoxFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_beat_box, container, false);
         ButterKnife.bind(this, v);
-        mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(), GRID_COLUMNS));
-        mRecyclerView.setAdapter(new SoundAdapter());
         mBeatBox = new BeatBox(getActivity());
+        mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(), GRID_COLUMNS));
+        mRecyclerView.setAdapter(new SoundAdapter(mBeatBox.getSounds()));
         return v;
     }
 
