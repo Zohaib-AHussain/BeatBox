@@ -49,7 +49,7 @@ public class BeatBoxFragment extends Fragment {
 
         public SoundHolder(LayoutInflater inflater, ViewGroup container) {
             super(inflater.inflate(R.layout.list_item_sound, container, false));
-            ButterKnife.bind(this, inflater.inflate(R.layout.list_item_sound, container, false));
+            ButterKnife.bind(this, itemView);
         }
 
         public void bindSound(Sound sound){
