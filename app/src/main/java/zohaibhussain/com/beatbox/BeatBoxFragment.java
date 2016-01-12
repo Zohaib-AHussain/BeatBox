@@ -43,13 +43,18 @@ public class BeatBoxFragment extends Fragment {
     }
 
     protected class SoundHolder extends RecyclerView.ViewHolder{
-
+        private Sound mSound;
         @Bind(R.id.list_item_sound_button)
         protected Button mButton;
 
         public SoundHolder(LayoutInflater inflater, ViewGroup container) {
             super(inflater.inflate(R.layout.list_item_sound, container, false));
             ButterKnife.bind(this, inflater.inflate(R.layout.list_item_sound, container, false));
+        }
+
+        public void bindSound(Sound sound){
+            mSound = sound;
+            mButton.setText(sound.getName());
         }
     }
 
