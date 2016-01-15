@@ -42,7 +42,7 @@ public class BeatBoxFragment extends Fragment {
         return v;
     }
 
-    protected class SoundHolder extends RecyclerView.ViewHolder{
+    protected class SoundHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         private Sound mSound;
         @Bind(R.id.list_item_sound_button)
         protected Button mButton;
