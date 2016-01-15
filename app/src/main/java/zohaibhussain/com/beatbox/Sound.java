@@ -23,4 +23,13 @@ public class Sound {
         return mName;
     }
 
+
+    public Integer getSoundID() {
+        return mSoundID;
+    }
+
+    public void setSoundID(Integer soundID) {
+        mSoundID = soundID;
+    }
+
 }
