@@ -27,6 +27,12 @@ public class BeatBoxFragment extends Fragment {
     @Bind(R.id.fragment_beat_box_recycler_view)
     protected RecyclerView mRecyclerView;
 
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        mBeatBox.release();
+    }
+
     public static BeatBoxFragment newInstance(){
         return new BeatBoxFragment();
     }
