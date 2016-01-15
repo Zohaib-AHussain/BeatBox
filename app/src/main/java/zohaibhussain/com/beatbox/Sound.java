@@ -6,6 +6,7 @@ package zohaibhussain.com.beatbox;
 public class Sound {
     private String mAssetPath;
     private String mName;
+    private Integer mSoundID;
 
     public Sound(String assetPath){
         mAssetPath = assetPath;
