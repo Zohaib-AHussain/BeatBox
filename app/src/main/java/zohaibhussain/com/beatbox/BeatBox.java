@@ -17,9 +17,10 @@ import java.util.List;
 public class BeatBox {
     private static final String TAG = "BeatBox";
     private static final String SOUNDS_FOLDER = "sample_sounds";
-    private List<Sound> mSounds  = new ArrayList<>();
     private static final int MAX_SOUNDS = 5;
 
+    private List<Sound> mSounds  = new ArrayList<>();
+    private SoundPool mSoundPool;
     private AssetManager mAssets;
 
     public BeatBox(Context context){
