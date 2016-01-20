@@ -45,6 +45,7 @@ public class BeatBoxFragment extends Fragment {
         mBeatBox = new BeatBox(getActivity());
         mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(), GRID_COLUMNS));
         mRecyclerView.setAdapter(new SoundAdapter(mBeatBox.getSounds()));
+        setRetainInstance(true);
         return v;
     }
 
